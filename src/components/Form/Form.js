@@ -1,7 +1,7 @@
 import { FormProvider, useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
-import { useDeepCompareEffect } from 'react-use'
+// import { useDeepCompareEffect } from 'react-use'
 
 const Form = ({ validationSchema = yup.object({}), defaultValues = {}, onSubmit, children }) => {
   // useDeepCompareEffect(() => {
@@ -20,7 +20,7 @@ const Form = ({ validationSchema = yup.object({}), defaultValues = {}, onSubmit,
     onSubmit(data)
   }
   return (
-    <FormProvider>
+    <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit(handleSubmit)}>{children}</form>
     </FormProvider>
   )

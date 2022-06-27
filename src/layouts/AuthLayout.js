@@ -5,9 +5,9 @@ import Header from '../components/Header'
 const AuthLayout = ({ children }) => {
   return (
     <div>
-      {/* <Header> */}
-      <div>{children}</div>
-      {/* </Header> */}
+      <Header>
+        <div>{children}</div>
+      </Header>
     </div>
   )
 }
