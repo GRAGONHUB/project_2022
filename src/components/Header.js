@@ -1,13 +1,13 @@
 import { useHistory } from 'react-router-dom'
 
-const Header = () => {
+const Header = ({ children }) => {
   const history = useHistory()
 
   return (
     <nav class="p-3 bg-white text-dark shadow p-3 fixed-top mb-5 border-bottom">
       <div class="container flex flex-wrap justify-between items-center mx-auto">
         <div onClick={() => history.push('/')} class="flex items-center cursor-pointer">
-          <img src="" class="mr-3 h-6 sm:h-9" alt="GRAGONS" />
+          <img src="" class="mr-3 h-6 sm:h-9" alt="Logo" />
           <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"></span>
         </div>
         <button
@@ -49,6 +49,7 @@ const Header = () => {
           </ul>
         </div>
       </div>
+      {children}
     </nav>
   )
 }
