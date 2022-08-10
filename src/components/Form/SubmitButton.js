@@ -1,6 +1,6 @@
 const SubmitButton = ({ children = 'save' }) => (
   <div class="form-control mt-6">
-    <button class="btn btn-primary">{children}</button>
+    <button class="btn">{children}</button>
   </div>
 )
 
