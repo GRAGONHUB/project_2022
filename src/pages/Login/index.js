@@ -10,10 +10,11 @@ const validationSchema = yup.object({
 })
 
 const Home = () => {
+  const history = useHistory()
   const handleSubmit = (value) => {
     console.log(value)
+    history.push('/home')
   }
-  const history = useHistory()
   return (
     <div class="hero min-h-screen card-body">
       <div class="hero-content flex-col lg:flex-row-reverse">
