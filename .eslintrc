@@ -1,0 +1,57 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2021": true
+  },
+  "extends": ["eslint:recommended", "plugin:prettier/recommended","plugin:import/recommended"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["unused-imports"],
+  "rules": {
+    "semi": ["error", "never"],
+    "comma-dangle": ["error", "only-multiline"],
+    "arrow-body-style": "off",
+    "linebreak-style": [0, "unix"],
+    "no-console": [1, { "allow": ["error"] }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/prefer-default-export": 0,
+    "no-use-before-define": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/react-in-jsx-scope": 0,
+    "no-else-return": 0,
+    "react/display-name": 0,
+    "operator-linebreak": 0,
+    "no-undef": 0,
+    "import/no-unresolved": 2,
+    "import/no-extraneous-dependencies": 0,
+    "object-curly-newline": 0,
+    "implicit-arrow-linebreak": 0,
+    "no-unused-vars": 0,
+    "unused-imports/no-unused-imports": "error",
+		// "unused-imports/no-unused-vars": [
+		// 	"warn",
+		// 	{ "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+		// ],
+    "no-param-reassign": [2, {
+      "props": true,
+      "ignorePropertyModificationsFor": ["state", "ctx"]
+    }],
+    "react/prop-types": 0,
+    "react/require-default-props": 0
+  },
+}

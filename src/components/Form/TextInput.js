@@ -2,20 +2,18 @@ import ConnectForm from './ConnectForm'
 
 const TextInput = ({ name, label, type = 'text' }) => (
   <ConnectForm>
-    {({ register }) => {
-      return (
-        <div className="form-control">
-          {label && (
-            <label for={name} class="label">
-              <span class="label-text">{label}</span>
-            </label>
-          )}
+    {({ register }) => (
+      <div className="form-control">
+        {label && (
+          <label for={name} class="label">
+            <span class="label-text">{label}</span>
+          </label>
+        )}
 
-          <input className="input input-bordered" {...register(name)} type={type} />
-          {/* <span className=""></span> */}
-        </div>
-      )
-    }}
+        <input className="input input-bordered" {...register(name)} type={type} />
+        {/* <span className=""></span> */}
+      </div>
+    )}
   </ConnectForm>
 )
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Form, TextInput, SubmitButton } from '../../components/Form'
-import Card from '../../components/Card'
 import * as yup from 'yup'
 import { useHistory } from 'react-router-dom'
 
@@ -11,9 +10,7 @@ const validationSchema = yup.object({
 })
 
 const Register = () => {
-  const handleSubmit = (value) => {
-    console.log(value)
-  }
+  const handleSubmit = (value) => {}
   const history = useHistory()
   return (
     <div class="hero min-h-screen card-body">
