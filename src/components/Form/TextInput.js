@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import ConnectForm from './ConnectForm'
 
 const TextInput = ({ name, label, type = 'text' }) => (
@@ -5,8 +6,8 @@ const TextInput = ({ name, label, type = 'text' }) => (
     {({ register }) => (
       <div className="form-control">
         {label && (
-          <label for={name} class="label">
-            <span class="label-text">{label}</span>
+          <label htmlFor={name} className="label">
+            <span className="label-text">{label}</span>
           </label>
         )}
 
@@ -16,5 +17,17 @@ const TextInput = ({ name, label, type = 'text' }) => (
     )}
   </ConnectForm>
 )
+
+const props = {
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(['text', 'password']),
+}
+
+TextInput.propTypes = props
+
+TextInput.defaultProps = {
+  type: 'text',
+}
 
 export default TextInput

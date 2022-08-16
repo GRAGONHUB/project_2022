@@ -1,21 +1,22 @@
 import { useHistory } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 const Header = ({ children }) => {
   const history = useHistory()
 
   return (
     <>
-      <div class="navbar bg-base-100 shadow-xl">
-        <div class="navbar-start">
-          <div class="dropdown"></div>
-          <button class="btn btn-ghost normal-case text-xl">GRAGON</button>
+      <div className="navbar bg-base-100 shadow-xl">
+        <div className="navbar-start">
+          <div className="dropdown" />
+          <button className="btn btn-ghost normal-case text-xl">GRAGON</button>
         </div>
 
-        <div class="navbar-end">
-          <button class="btn mr-2" onClick={() => history.push('/')}>
+        <div className="navbar-end">
+          <button className="btn mr-2" onClick={() => history.push('/')}>
             Login
           </button>
-          <button class="btn btn-primary mr-5" onClick={() => history.push('/register')}>
+          <button className="btn btn-primary mr-5" onClick={() => history.push('/register')}>
             Sign up
           </button>
         </div>
@@ -23,6 +24,10 @@ const Header = ({ children }) => {
       {children}
     </>
   )
+}
+
+Header.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
 }
 
 export default Header

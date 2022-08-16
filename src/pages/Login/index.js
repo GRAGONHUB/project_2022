@@ -1,7 +1,7 @@
 import React from 'react'
-import { Form, TextInput, SubmitButton } from '../../components/Form'
 import * as yup from 'yup'
 import { useHistory } from 'react-router-dom'
+import { Form, TextInput, SubmitButton } from '../../components/Form'
 
 const validationSchema = yup.object({
   email: yup.string().required(),
@@ -10,15 +10,15 @@ const validationSchema = yup.object({
 
 const Home = () => {
   const history = useHistory()
-  const handleSubmit = (value) => {
+  const handleSubmit = () => {
     history.push('/home')
   }
   return (
-    <div class="hero min-h-screen card-body">
-      <div class="hero-content flex-col lg:flex-row-reverse">
-        <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <div class="card-body">
-            <h1 class="text-4xl font-bold hero-content text-center">Login</h1>
+    <div className="hero min-h-screen card-body">
+      <div className="hero-content flex-col lg:flex-row-reverse">
+        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card-body">
+            <h1 className="text-4xl font-bold hero-content text-center">Login</h1>
             <Form onSubmit={handleSubmit} validationSchema={validationSchema}>
               <TextInput name="email" label="Email" />
               <TextInput name="password" label="Password" type="password" />
@@ -26,12 +26,12 @@ const Home = () => {
             </Form>
           </div>
         </div>
-        <div class="divider lg:divider-horizontal">OR</div>
-        <div class="hero-content text-center">
-          <div class="max-w-md">
-            <h1 class="text-3xl font-bold py-5">Don't have an account?</h1>
-            <div class="form-control">
-              <button class="btn btn-primary " onClick={() => history.push('/register')}>
+        <div className="divider lg:divider-horizontal">OR</div>
+        <div className="hero-content text-center">
+          <div className="max-w-md">
+            <h1 className="text-3xl font-bold py-5">Don`&apos;`t have an account?</h1>
+            <div className="form-control">
+              <button className="btn btn-primary " onClick={() => history.push('/register')}>
                 Sign up
               </button>
             </div>

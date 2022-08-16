@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Header from '../components/Header'
 
 const AppLayout = ({ children }) => <div style={{ backgroundColor: 'red' }}>{children}</div>
 

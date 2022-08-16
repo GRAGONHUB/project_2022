@@ -1,9 +1,10 @@
 import { FormProvider, useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+import PropTypes from 'prop-types'
 // import { useDeepCompareEffect } from 'react-use'
 
-const Form = ({ validationSchema = yup.object({}), defaultValues = {}, onSubmit, children }) => {
+const Form = ({ validationSchema, defaultValues, onSubmit, children }) => {
   // useDeepCompareEffect(() => {
   //   const formValue = methods.getValues()
   //   Object.keys(formValue).forEach((key) => {
@@ -16,7 +17,7 @@ const Form = ({ validationSchema = yup.object({}), defaultValues = {}, onSubmit,
   //   return () => {}
   // }, defaultValues)
   const methods = useForm({ defaultValues, resolver: yupResolver(validationSchema) })
-  const handleSubmit = (data, e) => {
+  const handleSubmit = (data) => {
     onSubmit(data)
   }
   return (
@@ -25,4 +26,17 @@ const Form = ({ validationSchema = yup.object({}), defaultValues = {}, onSubmit,
     </FormProvider>
   )
 }
+
+Form.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  defaultValues: PropTypes.object,
+  validationSchema: PropTypes.object,
+}
+
+Form.defaultProps = {
+  validationSchema: yup.object({}),
+  defaultValues: {},
+}
+
 export default Form

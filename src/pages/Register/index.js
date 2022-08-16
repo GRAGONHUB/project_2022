@@ -1,7 +1,7 @@
 import React from 'react'
-import { Form, TextInput, SubmitButton } from '../../components/Form'
 import * as yup from 'yup'
 import { useHistory } from 'react-router-dom'
+import { Form, TextInput, SubmitButton } from '../../components/Form'
 
 const validationSchema = yup.object({
   username: yup.string().required(),
@@ -10,14 +10,14 @@ const validationSchema = yup.object({
 })
 
 const Register = () => {
-  const handleSubmit = (value) => {}
+  const handleSubmit = () => {}
   const history = useHistory()
   return (
-    <div class="hero min-h-screen card-body">
-      <div class="hero-content flex-col lg:flex-row-reverse">
-        <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <div class="card-body">
-            <h1 class="text-4xl font-bold hero-content text-center">Sign Up</h1>
+    <div className="hero min-h-screen card-body">
+      <div className="hero-content flex-col lg:flex-row-reverse">
+        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card-body">
+            <h1 className="text-4xl font-bold hero-content text-center">Sign Up</h1>
             <Form onSubmit={handleSubmit} validationSchema={validationSchema}>
               <TextInput name="username" label="Username" />
               <TextInput name="email" label="Email" />
@@ -27,12 +27,12 @@ const Register = () => {
             </Form>
           </div>
         </div>
-        <div class="divider lg:divider-horizontal">OR</div>
-        <div class="hero-content text-center">
-          <div class="max-w-md">
-            <h1 class="text-3xl font-bold py-5">Already have an account?</h1>
-            <div class="form-control">
-              <button class="btn btn-primary " onClick={() => history.push('/')}>
+        <div className="divider lg:divider-horizontal">OR</div>
+        <div className="hero-content text-center">
+          <div className="max-w-md">
+            <h1 className="text-3xl font-bold py-5">Already have an account?</h1>
+            <div className="form-control">
+              <button className="btn btn-primary " onClick={() => history.push('/')}>
                 Login
               </button>
             </div>
