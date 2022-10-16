@@ -3,9 +3,10 @@ import PropTypes from 'prop-types'
 import Header from '../components/Header'
 
 const AuthLayout = ({ children }) => (
-  <Header>
+  <>
+    <Header />
     <div>{children}</div>
-  </Header>
+  </>
 )
 
 AuthLayout.propTypes = {

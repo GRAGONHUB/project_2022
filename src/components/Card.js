@@ -1,13 +1,17 @@
 import PropTypes from 'prop-types'
 
-const Card = ({ children }) => (
-  <div className="p-4 max-w-sm max-w-md md bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
-    {children}
+const Card = ({ content }) => (
+  <div className="card shadow-xl">
+    <figure>
+      <img src={content.image} alt="content-images" />
+    </figure>
   </div>
 )
 
 Card.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
+  content: PropTypes.shape({
+    image: PropTypes.string.isRequired,
+  }).isRequired,
 }
 
 export default Card

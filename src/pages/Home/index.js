@@ -1,12 +1,18 @@
 import React from 'react'
+import Card from '../../components/Card'
+
+const mockedArray = [
+  { image: 'https://placeimg.com/260/400/arch' },
+  { image: 'https://placeimg.com/260/400/arch' },
+  { image: 'https://placeimg.com/260/400/arch' },
+  { image: 'https://placeimg.com/260/400/arch' },
+]
 
 const HomePage = () => (
-  <div className="hero min-h-screen bg-base-200 grid grid-cols-4 gap-4">
-    <img
-      src="https://placeimg.com/260/400/arch"
-      alt="test"
-      className="max-w-sm rounded-lg shadow-2xl"
-    />
+  <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(100px,1fr))] auto-rows-[100px]">
+    {mockedArray.map((item) => (
+      <Card key={item} content={item} />
+    ))}
   </div>
 )
 
