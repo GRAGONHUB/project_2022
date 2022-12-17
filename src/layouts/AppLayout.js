@@ -7,7 +7,7 @@ const user = { image: 'https://placeimg.com/80/80/people' }
 const AppLayout = ({ children }) => (
   <>
     <Header user={user} />
-    <div className="pt-4">{children}</div>
+    <div className="py-4 px-4">{children}</div>
   </>
 )
 
